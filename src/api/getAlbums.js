@@ -8,7 +8,8 @@ export async function getAlbums(artistId) {
 
   try {
     const dataAlbum = await resAlbum.json()
-    console.log(dataAlbum)
+    console.log(dataAlbum.items)
+    console.log(dataAlbum.items[4])
     // console.log(Array.from(dataAlbum))
     // return Array.from(dataAlbum)
   } catch (error) {
