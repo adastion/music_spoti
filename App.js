@@ -9,11 +9,11 @@ rootElement.style = "display: flex; flex-direction: column; align-items: center;
 export async function App() {
   getToken()
   const arrayArtists = await getArtists()
-  const contentWithArtistsElement = Artists(arrayArtists)
-  
+  const artistsElement = Artists(arrayArtists)
+
   arrayArtists.map(artist => {
     getAlbums(artist.id)
   })
 
-  rootElement.append(contentWithArtistsElement)
+  rootElement.append(artistsElement)
 }

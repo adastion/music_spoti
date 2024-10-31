@@ -3,13 +3,7 @@ export function CardArtist({ name, external_urls, images, genres }) {
   cardArtistElement.classList.add("card__artist")
   cardArtistElement.style = `position: relative; width: auto; background: url(${images[0].url}); background-repeat: no-repeat; background-position: center; background-size: cover; color: white; text-align: center; padding: 25px 15px; border-radius: 20px; display: grid; justify-items: center`
 
-  // content: "";
-  // position: absolute;
-  // inset: 0;
-  // z-index: -1;
-  // backdrop-filter: brightness(0.5);
-
-  const nameArtistElement = document.createElement("h4")
+  const nameArtistElement = document.createElement("h2")
   nameArtistElement.textContent = name
 
   const linkOnArtistElement = document.createElement("a")
