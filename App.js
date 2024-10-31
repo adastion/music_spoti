@@ -10,7 +10,7 @@ export async function App() {
   getToken()
   const arrayArtists = await getArtists()
   const contentWithArtistsElement = Artists(arrayArtists)
-
+  
   arrayArtists.map(artist => {
     getAlbums(artist.id)
   })

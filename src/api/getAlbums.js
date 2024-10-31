@@ -8,10 +8,7 @@ export async function getAlbums(artistId) {
 
   try {
     const dataAlbum = await resAlbum.json()
-    console.log(dataAlbum.items)
-    console.log(dataAlbum.items[4])
-    // console.log(Array.from(dataAlbum))
-    // return Array.from(dataAlbum)
+    console.log(dataAlbum)
   } catch (error) {
     console.log(error, "Проблемки")
   }
