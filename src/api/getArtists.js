@@ -8,7 +8,7 @@ export async function getArtists() {
 
   try {
     const dataArtists = await resArtists.json()
-    console.log(Array.from(dataArtists.artists))
+    // console.log(Array.from(dataArtists.artists))
     return Array.from(dataArtists.artists)
   } catch (error) {
     console.log(error, "Проблемки")

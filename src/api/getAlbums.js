@@ -1,3 +1,5 @@
+import { setDataAlbums } from "../../state.js"
+
 export async function getAlbums(artistId) {
   const resAlbum = await fetch(`https://api.spotify.com/v1/artists/${artistId}/albums`, {
     method: "GET",
@@ -8,7 +10,9 @@ export async function getAlbums(artistId) {
 
   try {
     const dataAlbum = await resAlbum.json()
-    console.log(dataAlbum)
+    console.log("from getAlbums", dataAlbum)
+    setDataAlbums(dataAlbum)
+
   } catch (error) {
     console.log(error, "Проблемки")
   }
