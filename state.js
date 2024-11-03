@@ -1,8 +1,10 @@
 import { getAlbums } from "./src/api/getAlbums.js"
+import { getTracks } from "./src/api/getTracks.js"
 
 export const data = {
   currentContent: "home",
-  albums: null
+  albums: null,
+  tracks: null
 }
 
 const subscibersList = []
@@ -18,9 +20,14 @@ export function subscribe(subscriber) {
 }
 
 ////
-export async function setArtistId(artistsId) {
+export function setDefaulePage() {
+  data.currentContent = "home"
+  notify()
+}
+
+export async function setArtistId(artistId) {
   data.currentContent = "albums"
-  await getAlbums(artistsId)
+  await getAlbums(artistId)
   notify()
 }
 
@@ -29,7 +36,14 @@ export function setDataAlbums(listData) {
   notify()
 }
 
-export function setDefaulePage() {
-  data.currentContent = "home"
+///
+export async function setAlbumId(albumId) {
+  data.currentContent = "tracks"
+  await getTracks(albumId)
+  notify()
+}
+
+export function setDataTracks(listData) {
+  data.tracks = listData
   notify()
 }

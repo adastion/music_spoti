@@ -10,7 +10,6 @@ export async function getAlbums(artistId) {
 
   try {
     const dataAlbum = await resAlbum.json()
-    console.log("from getAlbums", dataAlbum)
     setDataAlbums(dataAlbum)
 
   } catch (error) {

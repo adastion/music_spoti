@@ -15,6 +15,7 @@ body {
   position: relative;
   color: white;
   padding: 25px 15px;
+  background-color: rgb(0, 0, 0);
 
   &::before {
     content: "";
@@ -61,24 +62,36 @@ a {
 }
 
 @media (max-width: 768px) {
-  ul {
-    grid-template-columns: auto !important;
-  }
-
   .main_bg {
     height: 100%;
   }
 }
 
 .card-albums {
+  width: 100%;
   padding: 15px;
+  text-align: center;
+
+  & button {
+    padding: 10px 20px;
+    font-size: 25px;
+  }
+
+  & button + * {
+    margin-top: 30px;
+  }
 }
+
 .card-albums__list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
+
 .card-albums__item {
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,5 +103,61 @@ a {
     &:hover {
       transform: translateY(-10px);
     }
+  }
+}
+
+/* form */
+
+.authorization {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: brightness(50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  margin: 0;
+}
+
+.authorization__title {
+  & + * {
+    margin-top: 20px;
+  }
+}
+
+.authorization__form {
+  min-width: 310px;
+  max-width: 610px;
+  padding: 25px;
+  background-color: rgb(162, 162, 162);
+  border-radius: 25px;
+  display: grid;
+  gap: 25px;
+  margin: 15px 20px 15px;
+}
+
+.authorization__label {
+  & + * {
+    margin-top: 10px;
+  }
+}
+
+.authorization__field {
+  width: 100%;
+}
+.authorization__btn {
+  color: dimgray;
+  cursor: pointer;
+}
+
+.authorization__field,
+.authorization__btn {
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 20px;
+
+  &:focus {
+    outline: 2px solid #edff00;
   }
 }
