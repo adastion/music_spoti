@@ -32,8 +32,6 @@ export async function App() {
     rootElement.append(Auth())
   } else {
 
-    // console.log()
-
     // getToken()
     const arrayArtists = await getArtists()
     const artistsElement = Artists(arrayArtists)

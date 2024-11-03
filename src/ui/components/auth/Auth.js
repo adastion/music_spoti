@@ -1,3 +1,4 @@
+import { getFromForm } from "../../../utils/getFromForm.js"
 import { Field } from "./Field/Field.js"
 
 export function Auth() {
@@ -10,6 +11,12 @@ export function Auth() {
 
   const formElement = document.createElement("form")
   formElement.classList.add("authorization__form")
+  formElement.id = crypto.randomUUID()
+  formElement.addEventListener("submit", (e)=> {
+    e.preventDefault()
+    console.log(e.currentTarget.id)
+    getFromForm(e.currentTarget.id)
+  })
 
   const loginElement = Field("Login", "userName", "text")
   const passwordElement = Field("Password", "userPassword", "password")
