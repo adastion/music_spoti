@@ -3,13 +3,16 @@ import { Albums } from "./src/ui/components/albums/Albums.js"
 import { Artists } from "./src/ui/components/artists/Artists.js"
 import { Auth } from "./src/ui/components/auth/Auth.js"
 import { Tracks } from "./src/ui/components/tracks/Tracks.js"
-import { data, subscribe } from "./state.js"
+import { data, setDefaulePage, subscribe } from "./state.js"
 
 const rootElement = document.getElementById("root")
 rootElement.style = "display: flex; flex-direction: column; align-items: center;"
 
 subscribe(() => {
   document.getElementById("root").innerHTML = ""
+  if (localStorage.getItem("access_t")) {
+    setDefaulePage()
+  }
 
   switch (data.currentContent) {
     case "home":
