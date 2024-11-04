@@ -10,9 +10,6 @@ rootElement.style = "display: flex; flex-direction: column; align-items: center;
 
 subscribe(() => {
   document.getElementById("root").innerHTML = ""
-  if (localStorage.getItem("access_t")) {
-    setDefaulePage()
-  }
 
   switch (data.currentContent) {
     case "home":
@@ -31,7 +28,7 @@ subscribe(() => {
 export async function App() {
   if (!localStorage.getItem("access_t")) {
     rootElement.append(Auth())
-  } else {
+  } else if (localStorage.getItem("access_t")){
     const arrayArtists = await getArtists()
     const artistsElement = Artists(arrayArtists)
 
