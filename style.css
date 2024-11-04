@@ -22,11 +22,9 @@ body {
     position: absolute;
     inset: 0;
     backdrop-filter: blur(1px);
-    background: linear-gradient(
-      rgba(252, 232, 232, 0),
-      rgba(8, 18, 44, 0.6) 20%,
-      rgba(170, 132, 27, 0.2)
-    );
+    background: linear-gradient(rgba(252, 232, 232, 0),
+        rgba(8, 18, 44, 0.6) 20%,
+        rgba(170, 132, 27, 0.2));
     z-index: -1;
   }
 }
@@ -35,10 +33,11 @@ h1 {
   text-align: center;
   font-size: 45px;
 
-  & + * {
+  &+* {
     margin-top: 60px;
   }
 }
+
 h2 {
   color: #edff00;
 }
@@ -61,9 +60,22 @@ a {
   z-index: -2;
 }
 
+.artists__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
 @media (max-width: 768px) {
   .main_bg {
     height: 100%;
+  }
+
+  .artists__list {
+    grid-template-columns: auto;
   }
 }
 
@@ -77,7 +89,7 @@ a {
     font-size: 25px;
   }
 
-  & button + * {
+  & button+* {
     margin-top: 30px;
   }
 }
@@ -121,7 +133,7 @@ a {
 }
 
 .authorization__title {
-  & + * {
+  &+* {
     margin-top: 20px;
   }
 }
@@ -138,7 +150,7 @@ a {
 }
 
 .authorization__label {
-  & + * {
+  &+* {
     margin-top: 10px;
   }
 }
@@ -146,6 +158,7 @@ a {
 .authorization__field {
   width: 100%;
 }
+
 .authorization__btn {
   color: dimgray;
   cursor: pointer;
