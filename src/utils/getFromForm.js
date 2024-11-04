@@ -1,13 +1,14 @@
 export function getFromForm(formId) {
   const formElement = document.getElementById(formId)
   const elements = Array.from(formElement)
-  const data = []
+  let data = {}
   elements.forEach(element => {
     if (element.nodeName === "INPUT") {
       const { name, value } = element
-      data.push({ [name]: value })
+      data = { ...data, [name]: value }
     }
   })
 
+  console.log(data)
   return data
 }

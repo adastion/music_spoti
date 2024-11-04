@@ -1,3 +1,4 @@
+import { setPathPage } from "../../../../state.js"
 import { getFromForm } from "../../../utils/getFromForm.js"
 import { Field } from "./Field/Field.js"
 
@@ -14,12 +15,12 @@ export function Auth() {
   formElement.id = crypto.randomUUID()
   formElement.addEventListener("submit", (e)=> {
     e.preventDefault()
-    console.log(e.currentTarget.id)
-    getFromForm(e.currentTarget.id)
+    const authData = getFromForm(e.currentTarget.id)
+    setPathPage(authData)
   })
 
-  const loginElement = Field("Login", "userName", "text")
-  const passwordElement = Field("Password", "userPassword", "password")
+  const loginElement = Field("Client_id", "userName", "text")
+  const passwordElement = Field("Client_secret", "userPassword", "password")
 
   const btnElement = document.createElement("button")
   btnElement.classList.add("authorization__btn")
