@@ -1,5 +1,3 @@
-import { authData } from "../utils/authData.js"
-
 export async function getToken(data) {
   let client_id = data.client_id
   let client_secret = data.client_secret
@@ -8,8 +6,7 @@ export async function getToken(data) {
     client_id = data.client_id
     client_secret = data.client_secret
   } else {
-    client_id = authData.client_id
-    client_secret = authData.client_secret
+
   }
 
   const resAuth = await fetch('https://accounts.spotify.com/api/token', {
