@@ -50,6 +50,18 @@ a {
   }
 }
 
+.btn {
+  padding: 10px 20px;
+  font-size: 25px;
+  border-radius: 15px;
+  background-color: rgb(166, 202, 234);
+  color:rgb(50, 6, 91);
+
+  &+* {
+    margin-top: 30px;
+  } 
+}
+
 .main_bg {
   height: 100vh;
   width: 100%;
@@ -83,15 +95,6 @@ a {
   width: 100%;
   padding: 15px;
   text-align: center;
-
-  & button {
-    padding: 10px 20px;
-    font-size: 25px;
-  }
-
-  & button+* {
-    margin-top: 30px;
-  }
 }
 
 .card-albums__list {

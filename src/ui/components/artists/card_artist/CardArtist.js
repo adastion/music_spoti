@@ -1,6 +1,6 @@
 import { setArtistId } from "../../../../../state.js"
 
-export function CardArtist({ name, external_urls, images, genres, id }) {
+export function CardArtist({ name, images, genres, id }) {
   const cardArtistElement = document.createElement("li")
   cardArtistElement.classList.add("card__artist")
   cardArtistElement.style = `position: relative; width: auto; background: url(${images[0].url}); background-repeat: no-repeat; background-position: center; background-size: cover; color: white; text-align: center; padding: 25px 15px; border-radius: 20px; display: grid; justify-items: center`
@@ -10,10 +10,7 @@ export function CardArtist({ name, external_urls, images, genres, id }) {
 
   const linkOnArtistElement = document.createElement("a")
   linkOnArtistElement.id = id
-  // linkOnArtistElement.href = external_urls.spotify
   linkOnArtistElement.target = "_blank"
-
-  ////
   linkOnArtistElement.addEventListener("click", (e)=> {
     setArtistId(e.currentTarget.id)
   })
