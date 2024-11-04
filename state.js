@@ -3,7 +3,7 @@ import { getToken } from "./src/api/getToken.js"
 import { getTracks } from "./src/api/getTracks.js"
 
 export const data = {
-  currentContent: "home",
+  currentContent: "authorization",
   albums: null,
   tracks: null,
   pathPage: null,
